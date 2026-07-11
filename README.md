@@ -12,6 +12,9 @@ Python solutions for beginner-friendly LeetCode problems.
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
+| 303 | Range Sum Query - Immutable | `range_sum_query_immutable.py` | Arrays, prefix sums, range queries |
+| 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
+| 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 
 ## Notes
 
@@ -58,6 +61,32 @@ Space complexity: `O(n)`
 ### 283. Move Zeroes
 
 This solution first moves all non-zero numbers to the front while keeping their order. After that, the remaining positions are filled with zeroes.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 303. Range Sum Query - Immutable
+
+This solution stores the running totals in a prefix sum list. To get the sum from `left` to `right`, it subtracts the total before `left` from the total through `right`.
+
+Setup time complexity: `O(n)`
+
+Time complexity for each query: `O(1)`
+
+Space complexity: `O(n)`
+
+### 724. Find Pivot Index
+
+This solution keeps a left sum while moving through the array. The right sum is calculated by subtracting the left sum and current number from the total sum.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 1480. Running Sum of 1d Array
+
+This solution adds each previous running total to the current number. The array itself is updated and returned.
 
 Time complexity: `O(n)`
 
