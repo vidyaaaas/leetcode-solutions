@@ -11,11 +11,14 @@ Python solutions for beginner-friendly LeetCode problems.
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
+| 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
+| 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
 | 303 | Range Sum Query - Immutable | `range_sum_query_immutable.py` | Arrays, prefix sums, range queries |
 | 347 | Top K Frequent Elements | `top_k_frequent_elements.py` | Hash map, bucket sort |
+| 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 
@@ -37,14 +40,6 @@ Time complexity: `O(n log n)`
 
 Space complexity: `O(1)`
 
-### 27. Remove Element
-
-This solution keeps a write position called `length`. Every number that is not equal to `val` is copied into the front of the array.
-
-Time complexity: `O(n)`
-
-Space complexity: `O(1)`
-
 ### 49. Group Anagrams
 
 Each word is sorted and used as a dictionary key. Words with the same sorted letters are placed in the same group.
@@ -53,6 +48,14 @@ Time complexity: `O(n * m log m)`, where `m` is the average word length
 
 Space complexity: `O(n * m)`
 
+### 27. Remove Element
+
+This solution keeps a write position called `length`. Every number that is not equal to `val` is copied into the front of the array.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
 ### 121. Best Time to Buy and Sell Stock
 
 This solution keeps track of the lowest price seen so far and the best profit possible while looping through the array.
@@ -60,6 +63,22 @@ This solution keeps track of the lowest price seen so far and the best profit po
 Time complexity: `O(n)`
 
 Space complexity: `O(1)`
+
+### 128. Longest Consecutive Sequence
+
+This solution stores every number in a set. It only starts counting when a number has no previous neighbor, which means each sequence is counted from its beginning.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
+
+### 202. Happy Number
+
+This solution repeatedly replaces the number with the sum of its squared digits. A set remembers previous results so a repeating loop can be detected.
+
+Time complexity: `O(log n)`
+
+Space complexity: `O(log n)`
 
 ### 217. Contains Duplicate
 
@@ -102,6 +121,14 @@ This solution first counts every number. It then groups numbers by their frequen
 Time complexity: `O(n)`
 
 Space complexity: `O(n)`
+
+### 349. Intersection of Two Arrays
+
+This solution stores the first array in a set, then checks which values from the second array are also present. Another set keeps the answer unique.
+
+Time complexity: `O(n + m)`
+
+Space complexity: `O(n + m)`
 
 ### 724. Find Pivot Index
 
