@@ -8,10 +8,13 @@ Python solutions for beginner-friendly LeetCode problems.
 |---|---|---|---|
 | 1 | Two Sum | `two_sum.py` | Arrays, nested loops, pair checking |
 | 14 | Longest Common Prefix | `longest_common_prefix.py` | Strings, sorting, prefix matching |
+| 15 | 3Sum | `three_sum.py` | Sorting, two pointers, duplicate handling |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
+| 125 | Valid Palindrome | `valid_palindrome.py` | Strings, two pointers, character filtering |
 | 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
+| 167 | Two Sum II - Input Array Is Sorted | `two_sum_ii_input_array_is_sorted.py` | Sorted arrays, two pointers |
 | 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
@@ -40,6 +43,14 @@ Time complexity: `O(n log n)`
 
 Space complexity: `O(1)`
 
+### 15. 3Sum
+
+This solution sorts the array, fixes one number, and searches for the other two with inward-moving pointers. Repeated values are skipped so every returned triplet is unique.
+
+Time complexity: `O(n^2)`
+
+Space complexity: `O(1)` excluding the output and sorting implementation
+
 ### 49. Group Anagrams
 
 Each word is sorted and used as a dictionary key. Words with the same sorted letters are placed in the same group.
@@ -64,6 +75,14 @@ Time complexity: `O(n)`
 
 Space complexity: `O(1)`
 
+### 125. Valid Palindrome
+
+This solution moves two pointers toward the center, skips non-alphanumeric characters, and compares the remaining characters without case sensitivity.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
 ### 128. Longest Consecutive Sequence
 
 This solution stores every number in a set. It only starts counting when a number has no previous neighbor, which means each sequence is counted from its beginning.
@@ -71,6 +90,14 @@ This solution stores every number in a set. It only starts counting when a numbe
 Time complexity: `O(n)`
 
 Space complexity: `O(n)`
+
+### 167. Two Sum II - Input Array Is Sorted
+
+This solution uses the sorted order to adjust two pointers. A sum that is too small moves the left pointer forward, while a sum that is too large moves the right pointer backward.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
 
 ### 202. Happy Number
 
