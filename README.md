@@ -8,7 +8,10 @@ Python solutions for beginner-friendly LeetCode problems.
 |---|---|---|---|
 | 1 | Two Sum | `two_sum.py` | Arrays, nested loops, pair checking |
 | 14 | Longest Common Prefix | `longest_common_prefix.py` | Strings, sorting, prefix matching |
+| 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
+| 56 | Merge Intervals | `merge_intervals.py` | Arrays, sorting, interval merging |
+| 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
@@ -61,6 +64,30 @@ Space complexity: `O(n)`
 ### 283. Move Zeroes
 
 This solution first moves all non-zero numbers to the front while keeping their order. After that, the remaining positions are filled with zeroes.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 26. Remove Duplicates from Sorted Array
+
+Because the array is sorted, duplicate values are next to each other. A read pointer examines every value, while a write pointer marks where the next unique value should be stored. The first `k` positions contain the unique values when the scan finishes.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 56. Merge Intervals
+
+The intervals are sorted by their starting point. Each interval is then compared with the last merged interval: overlapping intervals extend its end, while non-overlapping intervals begin a new entry.
+
+Time complexity: `O(n log n)`
+
+Space complexity: `O(n)` for the result
+
+### 75. Sort Colors
+
+The Dutch National Flag algorithm divides the array into regions for `0`, `1`, and `2`. Three pointers place each value into its correct region in one pass without using the built-in sort function.
 
 Time complexity: `O(n)`
 
