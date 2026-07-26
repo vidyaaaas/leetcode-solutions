@@ -23,8 +23,10 @@ Python solutions for beginner-friendly LeetCode problems.
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
 | 303 | Range Sum Query - Immutable | `range_sum_query_immutable.py` | Arrays, prefix sums, range queries |
+| 344 | Reverse String | `reverse_string.py` | Strings, two pointers, in-place swapping |
 | 347 | Top K Frequent Elements | `top_k_frequent_elements.py` | Hash map, bucket sort |
 | 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
+| 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 
@@ -40,9 +42,9 @@ Space complexity: `O(1)`
 
 ### 14. Longest Common Prefix
 
-This solution sorts the words first. After sorting, the smallest and largest words are the only two words that need to be compared.
+This solution uses the first word as a reference and checks each character position against every other word. It stops as soon as a word ends or a character does not match.
 
-Time complexity: `O(n log n)`
+Time complexity: `O(n * m)`, where `m` is the length of the shortest checked prefix
 
 Space complexity: `O(1)`
 
@@ -168,6 +170,14 @@ Time complexity for each query: `O(1)`
 
 Space complexity: `O(n)`
 
+### 344. Reverse String
+
+This solution uses two pointers at opposite ends of the character list. It swaps the characters in place and moves both pointers toward the center.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
 ### 347. Top K Frequent Elements
 
 This solution first counts every number. It then groups numbers by their frequency and reads the groups from highest frequency to lowest.
@@ -183,6 +193,14 @@ This solution stores the first array in a set, then checks which values from the
 Time complexity: `O(n + m)`
 
 Space complexity: `O(n + m)`
+
+### 387. First Unique Character in a String
+
+This solution first counts how often each character appears. A second pass returns the index of the first character with a frequency of one.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)` because the problem input contains only lowercase English letters
 
 ### 724. Find Pivot Index
 
