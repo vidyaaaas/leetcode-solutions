@@ -19,13 +19,16 @@ Python solutions for beginner-friendly LeetCode problems.
 | 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
 | 167 | Two Sum II - Input Array Is Sorted | `two_sum_ii_input_array_is_sorted.py` | Sorted arrays, two pointers |
 | 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
+| 205 | Isomorphic Strings | `isomorphic_strings.py` | Strings, bidirectional hash maps |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
+| 290 | Word Pattern | `word_pattern.py` | Strings, bidirectional hash maps |
 | 303 | Range Sum Query - Immutable | `range_sum_query_immutable.py` | Arrays, prefix sums, range queries |
 | 344 | Reverse String | `reverse_string.py` | Strings, two pointers, in-place swapping |
 | 347 | Top K Frequent Elements | `top_k_frequent_elements.py` | Hash map, bucket sort |
 | 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
+| 383 | Ransom Note | `ransom_note.py` | Strings, hash map, frequency counting |
 | 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
@@ -112,6 +115,14 @@ Time complexity: `O(log n)`
 
 Space complexity: `O(log n)`
 
+### 205. Isomorphic Strings
+
+This solution keeps mappings in both directions. Each character in `s` must always map to the same character in `t`, and two characters in `s` cannot map to the same character in `t`.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
+
 ### 217. Contains Duplicate
 
 This solution uses a set to remember numbers already visited. If a number appears again, the function returns `True`.
@@ -135,6 +146,14 @@ This solution first moves all non-zero numbers to the front while keeping their 
 Time complexity: `O(n)`
 
 Space complexity: `O(1)`
+
+### 290. Word Pattern
+
+This solution splits the sentence into words and builds mappings in both directions. Each pattern character must match exactly one word, and each word must match exactly one pattern character.
+
+Time complexity: `O(n)`, where `n` is the length of the sentence
+
+Space complexity: `O(n)`
 
 ### 26. Remove Duplicates from Sorted Array
 
@@ -193,6 +212,14 @@ This solution stores the first array in a set, then checks which values from the
 Time complexity: `O(n + m)`
 
 Space complexity: `O(n + m)`
+
+### 383. Ransom Note
+
+This solution counts the characters available in the magazine. It then uses one count for every character in the ransom note and returns `False` if a required character is unavailable.
+
+Time complexity: `O(n + m)`
+
+Space complexity: `O(1)` because both inputs contain only lowercase English letters
 
 ### 387. First Unique Character in a String
 
