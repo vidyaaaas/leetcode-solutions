@@ -7,6 +7,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | # | Problem | File | Concepts |
 |---|---|---|---|
 | 1 | Two Sum | `two_sum.py` | Arrays, nested loops, pair checking |
+| 3 | Longest Substring Without Repeating Characters | `longest_substring_without_repeating_characters.py` | Strings, sliding window, hash map |
 | 14 | Longest Common Prefix | `longest_common_prefix.py` | Strings, sorting, prefix matching |
 | 15 | 3Sum | `three_sum.py` | Sorting, two pointers, duplicate handling |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
@@ -14,6 +15,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
 | 56 | Merge Intervals | `merge_intervals.py` | Arrays, sorting, interval merging |
 | 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
+| 76 | Minimum Window Substring | `minimum_window_substring.py` | Strings, sliding window, frequency counting |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
 | 125 | Valid Palindrome | `valid_palindrome.py` | Strings, two pointers, character filtering |
 | 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
@@ -30,6 +32,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
 | 383 | Ransom Note | `ransom_note.py` | Strings, hash map, frequency counting |
 | 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
+| 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 
@@ -42,6 +45,14 @@ This solution checks every pair of numbers and returns the indexes when their su
 Time complexity: `O(n^2)`
 
 Space complexity: `O(1)`
+
+### 3. Longest Substring Without Repeating Characters
+
+This solution expands a window with a right pointer and stores the latest index of each character. When a repeated character appears inside the current window, the left pointer jumps just past its previous position.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
 
 ### 14. Longest Common Prefix
 
@@ -179,6 +190,14 @@ Time complexity: `O(n)`
 
 Space complexity: `O(1)`
 
+### 76. Minimum Window Substring
+
+This solution expands the window until it contains every required character with the correct frequency. It then moves the left pointer inward while the window remains valid to find the smallest possible answer.
+
+Time complexity: `O(n + m)`
+
+Space complexity: `O(n + m)`
+
 ### 303. Range Sum Query - Immutable
 
 This solution stores the running totals in a prefix sum list. To get the sum from `left` to `right`, it subtracts the total before `left` from the total through `right`.
@@ -228,6 +247,14 @@ This solution first counts how often each character appears. A second pass retur
 Time complexity: `O(n)`
 
 Space complexity: `O(1)` because the problem input contains only lowercase English letters
+
+### 643. Maximum Average Subarray I
+
+This solution calculates the sum of the first window of size `k`. Each following window adds the new value and removes the value that just moved out, avoiding repeated summation.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)`
 
 ### 724. Find Pivot Index
 
