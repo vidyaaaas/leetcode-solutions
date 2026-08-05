@@ -10,6 +10,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 3 | Longest Substring Without Repeating Characters | `longest_substring_without_repeating_characters.py` | Strings, sliding window, hash map |
 | 14 | Longest Common Prefix | `longest_common_prefix.py` | Strings, sorting, prefix matching |
 | 15 | 3Sum | `three_sum.py` | Sorting, two pointers, duplicate handling |
+| 20 | Valid Parentheses | `valid_parentheses.py` | Strings, stack, bracket matching |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
@@ -33,10 +34,12 @@ Python solutions for beginner-friendly LeetCode problems.
 | 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
 | 383 | Ransom Note | `ransom_note.py` | Strings, hash map, frequency counting |
 | 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
+| 394 | Decode String | `decode_string.py` | Strings, stacks, nested decoding |
 | 438 | Find All Anagrams in a String | `find_all_anagrams_in_a_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 567 | Permutation in String | `permutation_in_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
+| 1047 | Remove All Adjacent Duplicates in String | `remove_all_adjacent_duplicates_in_string.py` | Strings, stack, adjacent cancellation |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 
 ## Notes
@@ -72,6 +75,14 @@ This solution sorts the array, fixes one number, and searches for the other two 
 Time complexity: `O(n^2)`
 
 Space complexity: `O(1)` excluding the output and sorting implementation
+
+### 20. Valid Parentheses
+
+This solution pushes opening brackets onto a stack. Every closing bracket must match the most recent opening bracket, and the stack must be empty when the scan finishes.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
 
 ### 49. Group Anagrams
 
@@ -259,6 +270,14 @@ Time complexity: `O(n)`
 
 Space complexity: `O(1)` because the problem input contains only lowercase English letters
 
+### 394. Decode String
+
+This solution uses one stack for repeat counts and another for previously built strings. Each closing bracket completes the innermost encoded section and attaches it to its parent section.
+
+Time complexity: `O(n + d)`, where `d` is the length of the decoded output
+
+Space complexity: `O(n + d)`
+
 ### 438. Find All Anagrams in a String
 
 This solution keeps a fixed-size window equal to the pattern length. Character frequencies are updated as the window moves, and each matching frequency array identifies an anagram's starting index.
@@ -290,6 +309,14 @@ This solution keeps a left sum while moving through the array. The right sum is 
 Time complexity: `O(n)`
 
 Space complexity: `O(1)`
+
+### 1047. Remove All Adjacent Duplicates in String
+
+This solution treats the result as a stack. A character removes the matching character on top of the stack; otherwise, it is added for future comparisons.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
 
 ### 1480. Running Sum of 1d Array
 
