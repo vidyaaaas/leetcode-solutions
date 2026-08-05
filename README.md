@@ -23,6 +23,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
 | 205 | Isomorphic Strings | `isomorphic_strings.py` | Strings, bidirectional hash maps |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
+| 219 | Contains Duplicate II | `contains_duplicate_ii.py` | Arrays, sliding window, hash map |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
 | 290 | Word Pattern | `word_pattern.py` | Strings, bidirectional hash maps |
@@ -32,6 +33,8 @@ Python solutions for beginner-friendly LeetCode problems.
 | 349 | Intersection of Two Arrays | `intersection_of_two_arrays.py` | Hash sets, unique intersection |
 | 383 | Ransom Note | `ransom_note.py` | Strings, hash map, frequency counting |
 | 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
+| 438 | Find All Anagrams in a String | `find_all_anagrams_in_a_string.py` | Strings, fixed-size sliding window, frequency counting |
+| 567 | Permutation in String | `permutation_in_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
@@ -142,6 +145,14 @@ Time complexity: `O(n)`
 
 Space complexity: `O(n)`
 
+### 219. Contains Duplicate II
+
+This solution stores the latest index of each number. When a number appears again, it checks whether the distance from its previous index is at most `k`.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(n)`
+
 ### 242. Valid Anagram
 
 This solution counts each letter in the first string, then removes those counts while reading the second string.
@@ -247,6 +258,22 @@ This solution first counts how often each character appears. A second pass retur
 Time complexity: `O(n)`
 
 Space complexity: `O(1)` because the problem input contains only lowercase English letters
+
+### 438. Find All Anagrams in a String
+
+This solution keeps a fixed-size window equal to the pattern length. Character frequencies are updated as the window moves, and each matching frequency array identifies an anagram's starting index.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)` because the frequency arrays always contain 26 entries
+
+### 567. Permutation in String
+
+This solution slides a fixed-size window across `s2`. If the window's character frequencies equal the frequencies in `s1`, that window is a permutation of `s1`.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)` because the frequency arrays always contain 26 entries
 
 ### 643. Maximum Average Subarray I
 
