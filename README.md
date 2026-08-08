@@ -13,7 +13,9 @@ Python solutions for beginner-friendly LeetCode problems.
 | 20 | Valid Parentheses | `valid_parentheses.py` | Strings, stack, bracket matching |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
+| 48 | Rotate Image | `rotate_image.py` | Matrices, transpose, in-place reversal |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
+| 54 | Spiral Matrix | `spiral_matrix.py` | Matrices, boundary traversal, simulation |
 | 56 | Merge Intervals | `merge_intervals.py` | Arrays, sorting, interval merging |
 | 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
 | 76 | Minimum Window Substring | `minimum_window_substring.py` | Strings, sliding window, frequency counting |
@@ -41,6 +43,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1047 | Remove All Adjacent Duplicates in String | `remove_all_adjacent_duplicates_in_string.py` | Strings, stack, adjacent cancellation |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
+| 1672 | Richest Customer Wealth | `richest_customer_wealth.py` | Matrices, row sums, maximum tracking |
 
 ## Notes
 
@@ -83,6 +86,22 @@ This solution pushes opening brackets onto a stack. Every closing bracket must m
 Time complexity: `O(n)`
 
 Space complexity: `O(n)`
+
+### 48. Rotate Image
+
+This solution first transposes the square matrix across its main diagonal. Reversing every row afterward completes the 90-degree clockwise rotation without creating another matrix.
+
+Time complexity: `O(n^2)`
+
+Space complexity: `O(1)`
+
+### 54. Spiral Matrix
+
+This solution tracks the top, bottom, left, and right boundaries of the unvisited area. It traverses one edge at a time and moves each boundary inward until every element has been visited.
+
+Time complexity: `O(m * n)`
+
+Space complexity: `O(1)` excluding the output
 
 ### 49. Group Anagrams
 
@@ -323,5 +342,13 @@ Space complexity: `O(n)`
 This solution adds each previous running total to the current number. The array itself is updated and returned.
 
 Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 1672. Richest Customer Wealth
+
+This solution calculates the sum of every customer's accounts and keeps the largest total seen.
+
+Time complexity: `O(m * n)`
 
 Space complexity: `O(1)`
