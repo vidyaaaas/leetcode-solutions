@@ -13,10 +13,12 @@ Python solutions for beginner-friendly LeetCode problems.
 | 20 | Valid Parentheses | `valid_parentheses.py` | Strings, stack, bracket matching |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
+| 36 | Valid Sudoku | `valid_sudoku.py` | Matrices, hash sets, constraint validation |
 | 48 | Rotate Image | `rotate_image.py` | Matrices, transpose, in-place reversal |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
 | 54 | Spiral Matrix | `spiral_matrix.py` | Matrices, boundary traversal, simulation |
 | 56 | Merge Intervals | `merge_intervals.py` | Arrays, sorting, interval merging |
+| 73 | Set Matrix Zeroes | `set_matrix_zeroes.py` | Matrices, in-place markers |
 | 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
 | 76 | Minimum Window Substring | `minimum_window_substring.py` | Strings, sliding window, frequency counting |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
@@ -37,6 +39,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 383 | Ransom Note | `ransom_note.py` | Strings, hash map, frequency counting |
 | 387 | First Unique Character in a String | `first_unique_character_in_a_string.py` | Strings, hash map, frequency counting |
 | 394 | Decode String | `decode_string.py` | Strings, stacks, nested decoding |
+| 424 | Longest Repeating Character Replacement | `longest_repeating_character_replacement.py` | Strings, sliding window, frequency counting |
 | 438 | Find All Anagrams in a String | `find_all_anagrams_in_a_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 567 | Permutation in String | `permutation_in_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
@@ -87,6 +90,14 @@ Time complexity: `O(n)`
 
 Space complexity: `O(n)`
 
+### 36. Valid Sudoku
+
+This solution uses sets to track the digits already seen in every row, column, and 3-by-3 box. A repeated digit in any of those groups makes the board invalid.
+
+Time complexity: `O(1)` because a Sudoku board always contains 81 cells
+
+Space complexity: `O(1)` because the tracking structures have fixed maximum sizes
+
 ### 48. Rotate Image
 
 This solution first transposes the square matrix across its main diagonal. Reversing every row afterward completes the 90-degree clockwise rotation without creating another matrix.
@@ -102,6 +113,14 @@ This solution tracks the top, bottom, left, and right boundaries of the unvisite
 Time complexity: `O(m * n)`
 
 Space complexity: `O(1)` excluding the output
+
+### 73. Set Matrix Zeroes
+
+This solution uses the first row and first column as marker storage for the remaining matrix. Two flags preserve whether those marker row and column must also be cleared, allowing the update to happen in place.
+
+Time complexity: `O(m * n)`
+
+Space complexity: `O(1)`
 
 ### 49. Group Anagrams
 
@@ -296,6 +315,14 @@ This solution uses one stack for repeat counts and another for previously built 
 Time complexity: `O(n + d)`, where `d` is the length of the decoded output
 
 Space complexity: `O(n + d)`
+
+### 424. Longest Repeating Character Replacement
+
+This solution expands a sliding window while tracking character frequencies and the largest frequency seen inside a useful window. When more than `k` replacements would be required, the left side moves forward.
+
+Time complexity: `O(n)`
+
+Space complexity: `O(1)` because the input contains only uppercase English letters
 
 ### 438. Find All Anagrams in a String
 
