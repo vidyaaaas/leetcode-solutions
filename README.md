@@ -13,6 +13,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 20 | Valid Parentheses | `valid_parentheses.py` | Strings, stack, bracket matching |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
+| 35 | Search Insert Position | `search_insert_position.py` | Arrays, binary search, lower bound |
 | 36 | Valid Sudoku | `valid_sudoku.py` | Matrices, hash sets, constraint validation |
 | 48 | Rotate Image | `rotate_image.py` | Matrices, transpose, in-place reversal |
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
@@ -30,6 +31,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 219 | Contains Duplicate II | `contains_duplicate_ii.py` | Arrays, sliding window, hash map |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
+| 278 | First Bad Version | `first_bad_version.py` | Binary search, boundary finding |
 | 283 | Move Zeroes | `move_zeroes.py` | Arrays, in-place writing, zero placement |
 | 290 | Word Pattern | `word_pattern.py` | Strings, bidirectional hash maps |
 | 303 | Range Sum Query - Immutable | `range_sum_query_immutable.py` | Arrays, prefix sums, range queries |
@@ -43,6 +45,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 438 | Find All Anagrams in a String | `find_all_anagrams_in_a_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 567 | Permutation in String | `permutation_in_string.py` | Strings, fixed-size sliding window, frequency counting |
 | 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
+| 704 | Binary Search | `binary_search.py` | Sorted arrays, binary search |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 1047 | Remove All Adjacent Duplicates in String | `remove_all_adjacent_duplicates_in_string.py` | Strings, stack, adjacent cancellation |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
@@ -97,6 +100,14 @@ This solution uses sets to track the digits already seen in every row, column, a
 Time complexity: `O(1)` because a Sudoku board always contains 81 cells
 
 Space complexity: `O(1)` because the tracking structures have fixed maximum sizes
+
+### 35. Search Insert Position
+
+This solution performs a lower-bound binary search. It returns the first index whose value is greater than or equal to the target, which is also the correct insertion position when the target is absent.
+
+Time complexity: `O(log n)`
+
+Space complexity: `O(1)`
 
 ### 48. Rotate Image
 
@@ -215,6 +226,14 @@ Space complexity: `O(n)`
 This solution first moves all non-zero numbers to the front while keeping their order. After that, the remaining positions are filled with zeroes.
 
 Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 278. First Bad Version
+
+This solution binary-searches the version range for the first version where `isBadVersion` returns `True`. Each check discards half of the remaining versions.
+
+Time complexity: `O(log n)`
 
 Space complexity: `O(1)`
 
@@ -353,6 +372,14 @@ Space complexity: `O(1)`
 This solution keeps a left sum while moving through the array. The right sum is calculated by subtracting the left sum and current number from the total sum.
 
 Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 704. Binary Search
+
+This solution repeatedly compares the target with the middle value of the sorted array. It discards the half that cannot contain the target until the value is found or the search range becomes empty.
+
+Time complexity: `O(log n)`
 
 Space complexity: `O(1)`
 
