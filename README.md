@@ -13,6 +13,8 @@ Python solutions for beginner-friendly LeetCode problems.
 | 20 | Valid Parentheses | `valid_parentheses.py` | Strings, stack, bracket matching |
 | 26 | Remove Duplicates from Sorted Array | `remove_duplicates_from_sorted_array.py` | Arrays, in-place updates, two pointers |
 | 27 | Remove Element | `remove_element.py` | Arrays, in-place writing, two pointers |
+| 33 | Search in Rotated Sorted Array | `search_in_rotated_sorted_array.py` | Binary search, rotated arrays |
+| 34 | Find First and Last Position of Element in Sorted Array | `find_first_and_last_position_of_element_in_sorted_array.py` | Binary search, boundary finding |
 | 35 | Search Insert Position | `search_insert_position.py` | Arrays, binary search, lower bound |
 | 36 | Valid Sudoku | `valid_sudoku.py` | Matrices, hash sets, constraint validation |
 | 48 | Rotate Image | `rotate_image.py` | Matrices, transpose, in-place reversal |
@@ -25,6 +27,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
 | 125 | Valid Palindrome | `valid_palindrome.py` | Strings, two pointers, character filtering |
 | 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
+| 153 | Find Minimum in Rotated Sorted Array | `find_minimum_in_rotated_sorted_array.py` | Binary search, rotated arrays |
 | 167 | Two Sum II - Input Array Is Sorted | `two_sum_ii_input_array_is_sorted.py` | Sorted arrays, two pointers |
 | 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
 | 205 | Isomorphic Strings | `isomorphic_strings.py` | Strings, bidirectional hash maps |
@@ -92,6 +95,22 @@ This solution pushes opening brackets onto a stack. Every closing bracket must m
 Time complexity: `O(n)`
 
 Space complexity: `O(n)`
+
+### 33. Search in Rotated Sorted Array
+
+This solution determines which half of the current range is sorted. It then checks whether the target belongs in that sorted half and discards the other half.
+
+Time complexity: `O(log n)`
+
+Space complexity: `O(1)`
+
+### 34. Find First and Last Position of Element in Sorted Array
+
+This solution performs two binary searches: one continues left after finding the target, while the other continues right. Together they locate the target's complete range.
+
+Time complexity: `O(log n)`
+
+Space complexity: `O(1)`
 
 ### 36. Valid Sudoku
 
@@ -226,6 +245,14 @@ Space complexity: `O(n)`
 This solution first moves all non-zero numbers to the front while keeping their order. After that, the remaining positions are filled with zeroes.
 
 Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 153. Find Minimum in Rotated Sorted Array
+
+This solution compares the middle value with the rightmost value. When the middle value is larger, the minimum must be to its right; otherwise, the middle may be the minimum and remains in the search range.
+
+Time complexity: `O(log n)`
 
 Space complexity: `O(1)`
 
