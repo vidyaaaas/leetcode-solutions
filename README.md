@@ -21,6 +21,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 49 | Group Anagrams | `group_anagrams.py` | Hash map, sorting, grouping |
 | 54 | Spiral Matrix | `spiral_matrix.py` | Matrices, boundary traversal, simulation |
 | 56 | Merge Intervals | `merge_intervals.py` | Arrays, sorting, interval merging |
+| 69 | Sqrt(x) | `sqrtx.py` | Math, binary search, boundary finding |
 | 73 | Set Matrix Zeroes | `set_matrix_zeroes.py` | Matrices, in-place markers |
 | 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
 | 76 | Minimum Window Substring | `minimum_window_substring.py` | Strings, sliding window, frequency counting |
@@ -50,6 +51,8 @@ Python solutions for beginner-friendly LeetCode problems.
 | 643 | Maximum Average Subarray I | `maximum_average_subarray_i.py` | Arrays, fixed-size sliding window |
 | 704 | Binary Search | `binary_search.py` | Sorted arrays, binary search |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
+| 875 | Koko Eating Bananas | `koko_eating_bananas.py` | Binary search on answer, greedy validation |
+| 1011 | Capacity To Ship Packages Within D Days | `capacity_to_ship_packages_within_d_days.py` | Binary search on answer, greedy simulation |
 | 1047 | Remove All Adjacent Duplicates in String | `remove_all_adjacent_duplicates_in_string.py` | Strings, stack, adjacent cancellation |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
 | 1672 | Richest Customer Wealth | `richest_customer_wealth.py` | Matrices, row sums, maximum tracking |
@@ -149,6 +152,14 @@ Space complexity: `O(1)` excluding the output
 This solution uses the first row and first column as marker storage for the remaining matrix. Two flags preserve whether those marker row and column must also be cleared, allowing the update to happen in place.
 
 Time complexity: `O(m * n)`
+
+Space complexity: `O(1)`
+
+### 69. Sqrt(x)
+
+This solution binary-searches for the largest integer whose square is no greater than `x`. The saved candidate is the truncated square root when no exact square exists.
+
+Time complexity: `O(log x)`
 
 Space complexity: `O(1)`
 
@@ -399,6 +410,22 @@ Space complexity: `O(1)`
 This solution keeps a left sum while moving through the array. The right sum is calculated by subtracting the left sum and current number from the total sum.
 
 Time complexity: `O(n)`
+
+Space complexity: `O(1)`
+
+### 875. Koko Eating Bananas
+
+This solution binary-searches the possible eating speeds. For each speed, it calculates the total hours required and keeps the smallest speed that finishes all piles within `h` hours.
+
+Time complexity: `O(n log m)`, where `m` is the largest pile
+
+Space complexity: `O(1)`
+
+### 1011. Capacity To Ship Packages Within D Days
+
+This solution binary-searches capacities between the heaviest package and the total weight. A greedy simulation counts the days required for each candidate capacity and keeps the smallest feasible one.
+
+Time complexity: `O(n log s)`, where `s` is the sum of all package weights
 
 Space complexity: `O(1)`
 
