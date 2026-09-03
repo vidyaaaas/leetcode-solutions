@@ -25,6 +25,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 73 | Set Matrix Zeroes | `set_matrix_zeroes.py` | Matrices, in-place markers |
 | 75 | Sort Colors | `sort_colors.py` | Arrays, two pointers, Dutch National Flag |
 | 76 | Minimum Window Substring | `minimum_window_substring.py` | Strings, sliding window, frequency counting |
+| 88 | Merge Sorted Array | `merge_sorted_array.py` | Sorting, two pointers, in-place merging |
 | 121 | Best Time to Buy and Sell Stock | `best_time_to_buy_and_sell_stock.py` | Arrays, greedy tracking, minimum value so far |
 | 125 | Valid Palindrome | `valid_palindrome.py` | Strings, two pointers, character filtering |
 | 128 | Longest Consecutive Sequence | `longest_consecutive_sequence.py` | Hash set, sequence starts |
@@ -32,6 +33,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 167 | Two Sum II - Input Array Is Sorted | `two_sum_ii_input_array_is_sorted.py` | Sorted arrays, two pointers |
 | 202 | Happy Number | `happy_number.py` | Hash set, cycle detection, math |
 | 205 | Isomorphic Strings | `isomorphic_strings.py` | Strings, bidirectional hash maps |
+| 215 | Kth Largest Element in an Array | `kth_largest_element_in_an_array.py` | Sorting, min heap, selection |
 | 217 | Contains Duplicate | `contains_duplicate.py` | Arrays, set, duplicate checking |
 | 219 | Contains Duplicate II | `contains_duplicate_ii.py` | Arrays, sliding window, hash map |
 | 242 | Valid Anagram | `valid_anagram.py` | Hash map, character counting |
@@ -52,6 +54,7 @@ Python solutions for beginner-friendly LeetCode problems.
 | 704 | Binary Search | `binary_search.py` | Sorted arrays, binary search |
 | 724 | Find Pivot Index | `find_pivot_index.py` | Arrays, prefix sums, left and right sums |
 | 875 | Koko Eating Bananas | `koko_eating_bananas.py` | Binary search on answer, greedy validation |
+| 912 | Sort an Array | `sort_an_array.py` | Sorting, merge sort, divide and conquer |
 | 1011 | Capacity To Ship Packages Within D Days | `capacity_to_ship_packages_within_d_days.py` | Binary search on answer, greedy simulation |
 | 1047 | Remove All Adjacent Duplicates in String | `remove_all_adjacent_duplicates_in_string.py` | Strings, stack, adjacent cancellation |
 | 1480 | Running Sum of 1d Array | `running_sum_of_1d_array.py` | Arrays, running sum, prefix sums |
@@ -460,3 +463,27 @@ This solution calculates the sum of every customer's accounts and keeps the larg
 Time complexity: `O(m * n)`
 
 Space complexity: `O(1)`
+
+### 88. Merge Sorted Array
+
+This solution fills `nums1` from the end, comparing the largest remaining values in both arrays. Writing backward preserves the unmerged values already stored in `nums1`.
+
+Time complexity: `O(m + n)`
+
+Space complexity: `O(1)`
+
+### 912. Sort an Array
+
+This solution uses merge sort to divide the array into smaller ranges, sort each range, and merge them back together in order.
+
+Time complexity: `O(n log n)`
+
+Space complexity: `O(n)`
+
+### 215. Kth Largest Element in an Array
+
+This solution maintains a min heap containing the `k` largest values seen so far. The smallest value in that heap is the kth largest value overall.
+
+Time complexity: `O(n log k)`
+
+Space complexity: `O(k)`
